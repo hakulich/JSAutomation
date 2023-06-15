@@ -1,0 +1,148 @@
+/**
+ * 1.
+ * Given an array consisting of movie names, iterate over the array with the output of the names of each movie to the console
+ */
+
+let movies = ["Adam", "Dark", "Ends", "Endurance"];
+
+movies.forEach((item) => console.log(item));
+
+/**
+ * 2.
+ * Given an array of car manufacturers, convert the array to a string and back to an array
+ */
+
+let manufacturers = ["Audi", "BMW", "Reno", "Opel"];
+
+let separator = " ";
+
+let manufactToString = manufacturers.reduce(
+  (sum, current) => sum + separator + current
+);
+console.log(manufactToString);
+
+let manufactToArray = manufactToString.split(separator);
+console.log(manufactToArray);
+
+/**
+ * 3.
+ * Given an array of the names of your friends, add the words hello to each element of the array
+ */
+
+let friends = ["Ted", "Mark", "Genna", "Piotr"];
+
+let friendGreeting = friends.map((item) => "Hello " + item);
+
+console.log(friendGreeting);
+
+/**
+ * 4.
+ * Convert numeric array to Boolean
+ */
+
+let numberArr = [1, 2, 0, -2];
+
+let boolArr = numberArr.map((item) => Boolean(item));
+
+console.log(boolArr);
+
+/**
+ * 5.
+ * Sort the array [1,6,7,8,3,4,5,6] in descending order
+ */
+
+let arr = [1, 6, 7, 8, 3, 4, 5, 6];
+
+arr.sort((a, b) => b - a);
+
+console.log(arr);
+
+/**
+ * 6.
+ * Filter array [1,6,7,8,3,4,5,6] by value> 3
+ */
+
+let filterArr = arr.filter((item) => item > 3);
+
+console.log(filterArr);
+
+/**
+ * 7.
+ * Write a function that takes two parameters - an array and a number and outputs the index of an array element equal to a number
+ */
+
+function findIndex(arr, value) {
+  let index = arr.indexOf(value);
+
+  return index > 0 ? index : "No such element";
+}
+
+let arr2 = [1, 6, 7, 8, 3, 4, 5, 6];
+
+console.log("Index is: ");
+console.log(findIndex(arr2, 6));
+
+/**
+ * 8.
+ * Implement a loop that will print the number 'a' until it is less than 10
+ */
+
+let a = 15;
+
+console.log("Print A till A = 10:");
+
+while (a > 10) {
+  console.log(a);
+  a--;
+}
+
+/**
+ * 9.
+ * Implement a loop that prints prime numbers to the console
+ */
+function isPrime(value) {
+  let isPrime = true;
+
+  if (value === 1 || value < 1) isPrime = false;
+
+  if (value > 1) {
+    for (let i = 2; i < value; i++) {
+      if (value % i == 0) {
+        isPrime = false;
+        break;
+      }
+    }
+  }
+  return isPrime;
+}
+
+function printPrimeNumbers(arr) {
+  for (i = 0; i < arr.length; i++) {
+    if (isPrime(arr[i])) {
+      console.log(arr[i]);
+    }
+  }
+}
+
+let arr3 = [1, 6, -2, 0, 5, 10, 11];
+
+console.log("Prime numbers are: ");
+printPrimeNumbers(arr3);
+
+/**
+ * 10.
+ * Implement a loop that prints odd numbers to the console
+ */
+
+function printOddNumbers(arr) {
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 != 0 || arr[i] == 1) {
+      console.log(arr[i]);
+    }
+  }
+}
+
+let arr4 = [1, 6, -2, 0, 7, 5, 10];
+
+console.log("Odd numbers are: ");
+printOddNumbers(arr4);
